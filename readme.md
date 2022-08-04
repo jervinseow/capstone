@@ -8,7 +8,7 @@ With more than 1 million flats spread across 24 towns and 3 estates, the Singapo
 
 There are reports stating that demand for resale flats has spiked in recent years, resulting in a reactionary increase in resale flat prices. According to the PropertyGuru Singapore Property Market Report Q2 2022, young families continue to gravitate towards the HDB resale market as a result of the latest round of BTO building delays and their unwillingness to wait through lengthy BTO completion periods, even though their prices are generally higher. Hence, we will be focusing on resale flats in this project.
 
-In a [typical resale flat transaction](https://www.hdb.gov.sg/residential/buying-a-flat/buying-procedure-for-resale-flats/overview), an accurate valuation can only be requested after registering an **Intent to Buy** and obtaining an **Option to Purchase (OTP)**. This is not intuitive as this means that HDB will only provide the valuation after the price is agreed on. If the **Cash Over Valuation (COV)**, the difference between the sale price of the flat and its actual valuation by HDB, exceeds what buyers expect or budget for, they may find it hard to 'cough up' the **COV** in cash. The only way to get an estimate of the **COV** before this stage is only through personal due diligence, even for property agents.
+In a [typical resale flat transaction](https://www.hdb.gov.sg/residential/buying-a-flat/buying-procedure-for-resale-flats/overview), an accurate valuation can only be requested after registering an **Intent to Buy** and obtaining an **Option to Purchase (OTP)**. This is not intuitive as this means that HDB will only provide the valuation after the price is agreed on. If the **Cash Over Valuation (COV)**, the difference between the sale price of the flat and its actual valuation by HDB, exceeds what buyers expect or budget for, they may find it hard to 'cough up' the **COV** in cash. The only way to get an estimate of the **COV** before this stage is through personal due diligence, even for property agents.
 
 ## Problem Statement
 
@@ -59,7 +59,7 @@ Root Mean Squared Error (RSME) was used as my main metric as it is particularly 
 ---
 ## Conclusion
 
-We managed to create a model that has a significantly lower RSME when compared to our baseline. The final RSME is 20,727, which is less than 4% of the current mean resale price of ~$550k. We can also conclude that the features we engineered have a statistically significant relationship with resale flat prices, and were useful in improving the accuracy of our models. Our model should be able to detect undervalued and overvalued flats, and should be able to give a good estimate of COVs.
+I managed to create a model that has a significantly lower RSME when compared to our baseline. The final RSME is 20,727, which is less than 4% of the current mean resale price of ~$550k. We can also conclude that the features we engineered have a statistically significant relationship with resale flat prices, and were useful in improving the accuracy of our models. Our model should be able to detect undervalued and overvalued flats, and should be able to give a good estimate of COVs.
 
 Moving forward, I will aim to deploy the trained model in a web-based application like Streamlit. I also plan to test this model further on future data. HDB updates the dataset very frequently, making this plan very feasible.
 
@@ -69,7 +69,7 @@ There are other factors that will influence resale flat prices and COVs like the
 
 A key consideration in this project was whether I should select the most accurate or efficient model. Processing power was a big concern; I only managed to train all the models with the help of AWS Sagemaker Studio. I only ended up choosing the most efficient model, LightGBM, because of its high potential in deployability. This decision might have led to a notable tradeoff in prediction accuracy.
 
-Euclidean distance from location was also used instead of travel time. This may not be the most accurate unit because euclidean distance from a location is not perfectly correlated with the time taken to get there. This could have been improved by using a paid API (e.g. Google Maps API) to further understand the relationship between distance and travel times between two locations.
+Geodesic distance from location was also used instead of travel time. This may not be the most accurate unit because geodesic distance from a location is not perfectly correlated with the time taken to get there. This could have been improved by using a paid API (e.g. Google Maps API) to further understand the relationship between distance and travel times between two locations.
 
 
 ---
