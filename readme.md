@@ -1,6 +1,6 @@
 <img src="http://imgur.com/1ZcRyrc.png" style="float: left; margin: 5px; height: 30px">
-
-# Capstone Project: Forecasting HDB Resale Prices
+s
+# Capstone Project: HDB Resale Price Predictions
 
 ## Introduction
 
